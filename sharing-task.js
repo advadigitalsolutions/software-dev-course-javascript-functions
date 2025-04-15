@@ -89,3 +89,35 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Explain how your team approached the design and testing process
 
 // ✅ Bonus: Can you extend any of the functions to be more flexible or reusable?
+
+function generateAttendeeBadge(name, role) {
+    // Format the output string
+    return `Name: ${name}, Role: ${role.charAt(0).toUpperCase() + role.slice(1)}`;
+    }
+function calculateEventCost(attendees, costPerAttendee) {
+    // Calculate total cost
+    let totalCost = attendees * costPerAttendee;
+
+    // Apply discount if applicable
+    if (attendees > 100) {
+        totalCost *= 0.9; // Apply 10% discount
+    }
+
+    return totalCost;
+}
+function validateEmail(email) {
+    // Check if email contains "@" and "."
+    return email.includes('@') && email.includes('.');
+}
+// Test cases
+console.log(generateAttendeeBadge("Alice", "speaker")); // "Name: Alice, Role: Speaker"
+console.log(generateAttendeeBadge("Bob", "attendee")); // "Name: Bob, Role: Attendee"
+console.log(generateAttendeeBadge("Charlie", "organizer")); // "Name: Charlie, Role: Organizer"
+console.log(generateAttendeeBadge("David", "volunteer")); // "Name: David, Role: Volunteer"
+console.log(generateAttendeeBadge("Eve", "guest")); // "Name: Eve, Role: Guest"
+console.log(calculateEventCost(150, 50)); // 6750
+console.log(calculateEventCost(50, 100)); // 5000
+console.log(calculateEventCost(100, 20)); // 2000
+console.log(calculateEventCost(200, 10)); // 1800
+console.log(calculateEventCost(80, 30)); // 2400
+
